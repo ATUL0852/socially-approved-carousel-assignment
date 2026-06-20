@@ -21,7 +21,7 @@ export const unlikeVideo = async (
   videoId
 ) => {
 
-  const response = await fetch("http://localhost:5000/api/unlike",
+  const response = await fetch(`${BASE_URL}/unlike`,
     {
       method: "POST",
       headers: {

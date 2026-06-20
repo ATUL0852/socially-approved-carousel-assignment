@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "https://socially-approved-carousel-assignment.onrender.com/api";
 
 export const getVideos = async () => {
   const response = await fetch(`${BASE_URL}/videos`);

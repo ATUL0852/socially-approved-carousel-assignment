@@ -35,7 +35,7 @@ const VideoModal = ({
         speed={600}
         initialSlide={selectedIndex}
         slidesPerView={1.8}
-        spaceBetween={-250}
+        spaceBetween={-200}
         className="modal-swiper"
       >
         {videos.map((video) => (

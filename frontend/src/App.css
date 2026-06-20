@@ -1,0 +1,590 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f3f3f3;
+  font-family: Inter, sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+/* =========================
+   HOME
+========================= */
+
+.page-wrapper {
+  width: 100%;
+  padding: 60px 80px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 64px;
+  font-weight: 300;
+  color: #444;
+  margin-bottom: 60px;
+}
+
+/* =========================
+   OUTER CAROUSEL
+========================= */
+
+.outer-slider {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
+/* =========================
+   REEL CARD
+========================= */
+
+.reel-card {
+  width: 240px;
+  height: 430px;
+
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  background: #000;
+
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.reel-card:hover {
+  transform: translateY(-5px);
+}
+
+.reel-preview {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.85);
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn {
+  position: fixed;
+  top: 25px;
+  right: 30px;
+
+  width: 60px;
+  height: 60px;
+
+  border: none;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 45px;
+
+  cursor: pointer;
+
+  z-index: 10000;
+}
+
+.modal-swiper {
+  width: 100%;
+  padding: 0 100px;
+  overflow: visible !important;
+}
+
+.modal-swiper .swiper-wrapper {
+  align-items: center;
+  overflow: visible !important;
+}
+
+/* =========================
+   VIDEO PLAYER
+========================= */
+
+.modal-video-wrapper {
+  position: relative;
+
+  width: 360px;
+  margin: 0 auto;
+}
+
+.modal-video {
+  width: 100%;
+  height: 640px;
+  object-fit: cover;
+  border-radius: 18px;
+  background: black;
+  display: block;
+}
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+.progress-wrapper {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+
+  height: 4px;
+
+  background: rgba(255,
+      255,
+      255,
+      0.3);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  z-index: 10;
+}
+
+.progress-fill {
+  height: 100%;
+
+  background: white;
+
+  transition: width 0.1s linear;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.right-actions {
+  position: absolute;
+
+  right: 16px;
+  top: 38%;
+  height: 40%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  /* gap: 22px; */
+
+  z-index: 5;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 40px;
+  height: 40px;
+
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+
+  color: #fff;
+  font-size: 24px;
+
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.6));
+}
+
+.action-btn span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.action-btn.liked {
+  color: #ff3b30;
+}
+
+.action-btn:hover {
+  transform: scale(1.08);
+}
+
+/* =========================
+   MUTE BUTTON
+========================= */
+
+.mute-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* =========================
+   VIDEO HANDLE
+========================= */
+
+.video-handle {
+  position: absolute;
+  left: 16px;
+  bottom: 158px;
+
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  z-index: 5;
+}
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+  z-index: 6;
+}
+
+.product-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+}
+
+.product-thumb {
+  position: relative;
+
+  width: 52px;
+  height: 52px;
+  flex: 0 0 auto;
+
+  border-radius: 8px;
+  overflow: hidden;
+
+  background: #f0f0f0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #999;
+  font-size: 18px;
+}
+
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-badge {
+  position: absolute;
+  left: -4px;
+  top: -4px;
+
+  background: #ff3b5c;
+  color: #fff;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  padding: 2px 5px;
+  border-radius: 4px;
+
+  white-space: nowrap;
+}
+
+.product-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.product-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #222;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-name svg {
+  flex: 0 0 auto;
+  color: #888;
+}
+
+.product-price {
+  margin-top: 3px;
+
+  font-size: 13px;
+  font-weight: 700;
+  color: #111;
+
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.original-price {
+  font-size: 11px;
+  font-weight: 500;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.view-more-btn {
+  flex: 0 0 auto;
+
+  background: #6c4cf5;
+  color: #fff;
+
+  border: none;
+  border-radius: 16px;
+
+  font-size: 11.5px;
+  font-weight: 600;
+
+  padding: 7px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+
+  background: #111;
+  color: #fff;
+
+  border: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  padding: 11px 0;
+  cursor: pointer;
+}
+
+/* =========================
+   SWIPER NAVIGATION
+========================= */
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white !important;
+
+  width: 60px !important;
+  height: 60px !important;
+
+  background: rgba(255, 255, 255, .15);
+
+  border-radius: 50%;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 20px !important;
+}
+
+.modal-swiper .swiper-button-prev {
+  left: 20% !important;
+}
+
+.modal-swiper .swiper-button-next {
+  right: 20% !important;
+}
+
+/* =========================
+   ACTIVE SLIDE EFFECT
+========================= */
+
+.modal-swiper .swiper-slide {
+  transition: all 0.6s ease;
+  opacity: 0;
+  transform: scale(0.75);
+  z-index: 1;
+}
+
+/* center video */
+.modal-swiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 20;
+}
+
+/* previous */
+.modal-swiper .swiper-slide-prev {
+  opacity: 0.45;
+  transform: translateX(220px) scale(0.88);
+  z-index: 15;
+}
+
+/* next */
+.modal-swiper .swiper-slide-next {
+  opacity: 0.45;
+  transform: translateX(-220px) scale(0.88);
+  z-index: 15;
+}
+
+.modal-swiper .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.modal-swiper .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-swiper .swiper-slide-prev {
+  opacity: 0.45;
+  transform: translateX(480px) scale(0.85);
+  z-index: 5;
+}
+
+.modal-swiper .swiper-slide-next {
+  opacity: 0.45;
+  transform: translateX(-480px) scale(0.85);
+  z-index: 5;
+}
+
+
+
+.video-loader {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,
+      0,
+      0,
+      0.25);
+
+  z-index: 50;
+}
+
+.spinner {
+  width: 45px;
+  height: 45px;
+
+  border: 4px solid rgba(255,
+      255,
+      255,
+      0.25);
+
+  border-top: 4px solid #ffffff;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .page-wrapper {
+    padding: 30px 20px;
+  }
+
+  .section-title {
+    font-size: 38px;
+  }
+
+  .reel-card {
+    width: 220px;
+    height: 380px;
+  }
+
+  .modal-video {
+    height: 550px;
+  }
+
+  .modal-video-wrapper {
+    width: 300px;
+  }
+
+  .modal-swiper {
+    padding: 0 20px;
+  }
+
+  .right-actions {
+    right: 10px;
+  }
+}
